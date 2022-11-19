@@ -36,6 +36,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 
 import static com.oracle.labs.mlrg.olcut.util.IOUtil.replaceBackSlashes;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -54,7 +55,7 @@ public class ConfigurablePropertyMapTest {
 
     @BeforeEach
     public void setUp() throws IOException {
-        f = File.createTempFile("config", ".pb");
+        f = Files.createTempFile("config",".pb").toFile();
         f.deleteOnExit();
     }
 

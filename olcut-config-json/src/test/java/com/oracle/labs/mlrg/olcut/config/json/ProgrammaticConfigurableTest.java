@@ -40,6 +40,7 @@ import com.oracle.labs.mlrg.olcut.util.LabsLogFormatter;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Handler;
@@ -191,7 +192,7 @@ public class ProgrammaticConfigurableTest {
 
         //
         // Write the file.
-        File f = File.createTempFile("config", ".json");
+        File f = Files.createTempFile("config",".json").toFile();
         cm.save(f);
 
         //

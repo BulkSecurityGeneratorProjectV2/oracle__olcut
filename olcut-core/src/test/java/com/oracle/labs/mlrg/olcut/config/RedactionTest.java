@@ -37,6 +37,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.List;
 
 public class RedactionTest {
@@ -44,7 +45,7 @@ public class RedactionTest {
 
     @BeforeEach
     public void setUp() throws IOException {
-        f = File.createTempFile("config", ".xml");
+        f = Files.createTempFile("config",".xml").toFile();
         f.deleteOnExit();
     }
 

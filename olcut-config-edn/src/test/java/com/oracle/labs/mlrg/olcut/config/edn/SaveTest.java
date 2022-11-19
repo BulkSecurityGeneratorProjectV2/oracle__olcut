@@ -40,6 +40,7 @@ import com.oracle.labs.mlrg.olcut.config.StringConfigurable;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
@@ -57,7 +58,7 @@ public class SaveTest {
     @BeforeEach
     public void setUp() throws IOException {
         ConfigurationManager.addFileFormatFactory(new EdnConfigFactory());
-        f = File.createTempFile("config", ".edn");
+        f = Files.createTempFile("config",".edn").toFile();
         f.deleteOnExit();
     }
 

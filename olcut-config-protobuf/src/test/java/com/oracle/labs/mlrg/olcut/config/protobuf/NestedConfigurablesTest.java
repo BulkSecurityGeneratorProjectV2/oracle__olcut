@@ -36,6 +36,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.logging.Logger;
 
 import static com.oracle.labs.mlrg.olcut.util.IOUtil.replaceBackSlashes;
@@ -90,7 +91,7 @@ public class NestedConfigurablesTest {
     }
 
     private static File mkTmp() throws IOException {
-        File tmp = File.createTempFile("tmpConfig", ".pb");
+        File tmp = Files.createTempFile("tmpConfig",".pb").toFile();
         log.fine("created tmp file @ " + tmp.getAbsolutePath());
         tmp.deleteOnExit();
         return tmp;

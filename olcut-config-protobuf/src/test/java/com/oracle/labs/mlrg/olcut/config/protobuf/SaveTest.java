@@ -42,6 +42,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -57,7 +58,7 @@ public class SaveTest {
     @BeforeEach
     public void setUp() throws IOException {
         ConfigurationManager.addFileFormatFactory(new ProtoConfigFactory());
-        f = File.createTempFile("config", ".pb");
+        f = Files.createTempFile("config",".pb").toFile();
         f.deleteOnExit();
     }
 

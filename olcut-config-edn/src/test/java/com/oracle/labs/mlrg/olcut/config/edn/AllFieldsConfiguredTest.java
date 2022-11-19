@@ -33,6 +33,7 @@ import com.oracle.labs.mlrg.olcut.config.ConfigurationManager;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -62,7 +63,7 @@ public class AllFieldsConfiguredTest {
     @BeforeEach
     public void setUp() throws IOException {
         ConfigurationManager.addFileFormatFactory(new EdnConfigFactory());
-        f = File.createTempFile("all-config", ".edn");
+        f = Files.createTempFile("all-config",".edn").toFile();
         f.deleteOnExit();
     }
 

@@ -36,6 +36,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
@@ -77,7 +78,7 @@ public class AllFieldsConfiguredTest {
 
     @BeforeEach
     public void setUp() throws IOException {
-        f = File.createTempFile("all-config", ".xml");
+        f = Files.createTempFile("all-config",".xml").toFile();
         f.deleteOnExit();
     }
 

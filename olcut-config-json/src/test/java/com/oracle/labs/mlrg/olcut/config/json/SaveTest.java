@@ -40,6 +40,7 @@ import com.oracle.labs.mlrg.olcut.config.StringConfigurable;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
@@ -58,7 +59,7 @@ public class SaveTest {
     @BeforeEach
     public void setUp() throws IOException {
         ConfigurationManager.addFileFormatFactory(new JsonConfigFactory());
-        f = File.createTempFile("config", ".json");
+        f = Files.createTempFile("config",".json").toFile();
         f.deleteOnExit();
     }
 

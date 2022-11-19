@@ -37,6 +37,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -62,9 +63,9 @@ public class AllFieldsConfiguredTest {
     public void setUp() throws IOException {
         ConfigurationManager.addFileFormatFactory(new ProtoConfigFactory());
         ConfigurationManager.addFileFormatFactory(new ProtoTxtConfigFactory());
-        binaryFile = File.createTempFile("all-config", ".pb");
+        binaryFile = Files.createTempFile("all-config",".pb").toFile();
         binaryFile.deleteOnExit();
-        textFile = File.createTempFile("all-config", ".pbtxt");
+        textFile = Files.createTempFile("all-config",".pbtxt").toFile();
         textFile.deleteOnExit();
     }
 

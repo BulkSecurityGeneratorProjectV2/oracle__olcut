@@ -39,6 +39,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.Arrays;
 
 
@@ -55,7 +56,7 @@ public class ImportConfigTest {
 
     @BeforeEach
     public void setUp() throws IOException {
-        f = File.createTempFile("config", ".xml");
+        f = Files.createTempFile("config",".xml").toFile();
         f.deleteOnExit();
     }
 

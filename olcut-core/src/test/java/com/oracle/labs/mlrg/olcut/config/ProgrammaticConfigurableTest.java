@@ -36,6 +36,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Handler;
@@ -183,7 +184,7 @@ public class ProgrammaticConfigurableTest {
 
         //
         // Write the file.
-        File f = File.createTempFile("config", ".xml");
+        File f = Files.createTempFile("config",".xml").toFile();
         cm.save(f);
 
         //

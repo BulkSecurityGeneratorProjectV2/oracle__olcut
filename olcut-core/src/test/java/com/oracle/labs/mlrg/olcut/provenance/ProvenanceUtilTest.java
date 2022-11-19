@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -57,7 +58,7 @@ public class ProvenanceUtilTest {
 
     @Test
     public void testSerialize() throws Exception {
-        File tempFile = File.createTempFile("serialized-provenancable", ".ser", new File("target"));
+        File tempFile = Files.createTempFile(new File("target").toPath(),"serialized-provenancable",".ser").toFile();
         tempFile.deleteOnExit();
 
         ConfigurationManager cm = new ConfigurationManager("allConfig.xml");

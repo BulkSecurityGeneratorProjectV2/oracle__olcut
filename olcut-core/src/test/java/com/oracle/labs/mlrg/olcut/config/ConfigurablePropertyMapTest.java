@@ -30,6 +30,8 @@ package com.oracle.labs.mlrg.olcut.config;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -45,7 +47,7 @@ public class ConfigurablePropertyMapTest {
 
     @BeforeEach
     public void setUp() throws IOException {
-        f = File.createTempFile("config", ".xml");
+        f = Files.createTempFile("config",".xml").toFile();
         f.deleteOnExit();
     }
 

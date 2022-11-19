@@ -33,6 +33,7 @@ import com.oracle.labs.mlrg.olcut.config.ConfigurationManager;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -61,7 +62,7 @@ public class AllFieldsConfiguredTest {
     @BeforeEach
     public void setUp() throws IOException {
         ConfigurationManager.addFileFormatFactory(new JsonConfigFactory());
-        f = File.createTempFile("all-config", ".json");
+        f = Files.createTempFile("all-config",".json").toFile();
         f.deleteOnExit();
     }
 

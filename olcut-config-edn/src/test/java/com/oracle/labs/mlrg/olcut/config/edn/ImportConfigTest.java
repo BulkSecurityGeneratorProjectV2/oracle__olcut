@@ -39,6 +39,8 @@ import com.oracle.labs.mlrg.olcut.config.StringListConfigurable;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -61,7 +63,7 @@ public class ImportConfigTest {
 
     @BeforeEach
     public void setUp() throws IOException {
-        f = File.createTempFile("config", ".edn");
+        f = Files.createTempFile("config",".edn").toFile();
         f.deleteOnExit();
     }
 

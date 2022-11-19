@@ -34,6 +34,7 @@ import com.oracle.labs.mlrg.olcut.config.FooUserConfigurable;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.logging.Logger;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -90,7 +91,7 @@ public class NestedConfigurablesTest {
     }
 
     private static File mkTmp() throws IOException {
-        File tmp = File.createTempFile("tmpConfig", ".edn");
+        File tmp = Files.createTempFile("tmpConfig",".edn").toFile();
         log.fine("created tmp file @ " + tmp.getAbsolutePath());
         tmp.deleteOnExit();
         return tmp;

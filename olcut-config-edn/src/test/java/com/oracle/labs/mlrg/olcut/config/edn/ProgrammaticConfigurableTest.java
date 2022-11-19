@@ -41,6 +41,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
@@ -189,7 +190,7 @@ public class ProgrammaticConfigurableTest {
 
         //
         // Write the file.
-        File f = File.createTempFile("config", ".edn");
+        File f = Files.createTempFile("config",".edn").toFile();
         cm.save(f);
 
         //

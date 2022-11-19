@@ -34,6 +34,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.logging.Logger;
 import org.junit.jupiter.api.Test;
 
@@ -82,7 +83,7 @@ public class NestedConfigurablesTest {
     }
 
     private static File mkTmp() throws IOException {
-        File tmp = File.createTempFile("tmpConfig", ".xml");
+        File tmp = Files.createTempFile("tmpConfig",".xml").toFile();
         log.fine("created tmp file @ " + tmp.getAbsolutePath());
         tmp.deleteOnExit();
         return tmp;
